@@ -1,6 +1,7 @@
 package br.com.tech4me.tech4boocks.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,8 @@ public class LivroServiceImpl implements LivroService{
     }
 
     @Override
-    public Livro obterLivroPorId(String id) {
-        return repositorio.findById(id).get();
+    public Optional<Livro> obterLivroPorId(String id) {
+        return repositorio.findById(id);
     }
 
     @Override
